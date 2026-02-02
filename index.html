@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Culture Générale</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Quiz Culture Générale</h1>
+      <p>Créez une partie, ajoutez les joueurs, et lancez le défi façon « Question pour un champion ».</p>
+    </header>
+
+    <main>
+      <section class="card" id="setup">
+        <h2>Créer une partie</h2>
+        <div class="field">
+          <label for="player-count">Nombre de joueurs</label>
+          <input id="player-count" type="number" min="1" max="6" value="2" />
+        </div>
+        <div class="field">
+          <label for="timer-seconds">Temps par joueur (secondes)</label>
+          <input id="timer-seconds" type="number" min="10" max="120" value="20" />
+        </div>
+        <div id="player-names" class="player-names"></div>
+        <button id="start-game" class="primary">Lancer la partie</button>
+      </section>
+
+      <section class="card hidden" id="game">
+        <div class="game-header">
+          <div>
+            <h2 id="current-player">Joueur</h2>
+            <p class="question-count" id="question-count">Question 1 / 10</p>
+          </div>
+          <div class="timer">
+            <span>Temps restant</span>
+            <strong id="timer">20</strong>
+          </div>
+        </div>
+
+        <div class="question">
+          <p id="question-text">Question ici</p>
+        </div>
+
+        <div class="field">
+          <label for="answer">Votre réponse</label>
+          <input id="answer" type="text" placeholder="Tapez votre réponse" autocomplete="off" />
+        </div>
+        <div class="actions">
+          <button id="submit-answer" class="primary">Valider</button>
+          <button id="skip-question">Passer</button>
+        </div>
+        <p id="feedback" class="feedback"></p>
+      </section>
+
+      <section class="card hidden" id="results">
+        <h2>Résultats</h2>
+        <ul id="scoreboard" class="scoreboard"></ul>
+        <button id="restart">Rejouer</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
