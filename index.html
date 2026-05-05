@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoreForge – Univers Étendu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar glass">
+      <h1>LoreForge</h1>
+      <p class="subtitle">Dark Fantasy Cyber World Builder</p>
+
+      <section>
+        <label>Univers actif</label>
+        <div class="row">
+          <select id="universeSelect"></select>
+          <button id="newUniverseBtn">+</button>
+        </div>
+      </section>
+
+      <section>
+        <label>Modules</label>
+        <div id="moduleToggles" class="module-list"></div>
+      </section>
+
+      <section>
+        <label>Recherche intelligente</label>
+        <input id="searchInput" placeholder="Nom, tag, relation..." />
+      </section>
+
+      <section>
+        <label>Vues</label>
+        <div class="nav-grid">
+          <button data-view="entities">Panthéon</button>
+          <button data-view="factions">Factions</button>
+          <button data-view="places">Cartographie</button>
+          <button data-view="grimoire">Grimoire</button>
+          <button data-view="timeline">Timeline</button>
+          <button data-view="codex">Codex</button>
+          <button data-view="rpg">Mode JDR</button>
+          <button data-view="analytics">Statistiques</button>
+        </div>
+      </section>
+
+      <section>
+        <label>Données</label>
+        <div class="row wrap">
+          <button id="exportBtn">Exporter JSON</button>
+          <label class="upload">Importer
+            <input type="file" id="importInput" accept="application/json" />
+          </label>
+        </div>
+      </section>
+    </aside>
+
+    <main>
+      <header class="topbar glass">
+        <h2 id="viewTitle">Panthéon</h2>
+        <div class="row">
+          <button id="aiGenerateBtn">🤖 Génération IA (mock)</button>
+          <button id="splitToggle">Split View</button>
+        </div>
+      </header>
+
+      <div id="splitContainer" class="split">
+        <section id="editorPanel" class="panel glass"></section>
+        <section id="previewPanel" class="panel glass preview"></section>
+      </div>
+    </main>
+  </div>
+
+  <template id="cardTemplate">
+    <article class="card glass"></article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
